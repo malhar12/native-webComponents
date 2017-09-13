@@ -1,6 +1,6 @@
 class BluePrimaryButton extends HTMLElement {
   private _disabled: boolean;
-  private _label: boolean;
+  private _label: string;
 
   constructor(){
     super();
