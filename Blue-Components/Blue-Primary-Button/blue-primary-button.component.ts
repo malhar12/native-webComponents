@@ -1,6 +1,6 @@
 class BluePrimaryButton extends HTMLElement {
-  private _disabled: boolean;
-  private _label: string;
+  _disabled;
+  _label;
 
   constructor(){
     super();
@@ -31,11 +31,15 @@ class BluePrimaryButton extends HTMLElement {
   }
 
   static get observedAttributes(){
-    return ['disabled'];
+    return ['disabled', 'label'];
   }
 
   attributeChangedCallback(attrName, oldValue, newValue){
-    this.disabled = newValue;
+    if(attrName === 'disabled'){
+      this.disabled = newValue;
+    }else if(attrName === 'label'){
+      this.label = newValue;
+    }
   }
 
   connectedCallback(){
