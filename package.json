@@ -1,6 +1,6 @@
 {
   "name": "native-es6-webkit",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A UI Library of Native ES6 Web Components",
   "main": "index.js",
   "scripts": {
@@ -15,8 +15,7 @@
     "dist"
   ],
   "keywords": [
-    "Web",
-    "Components",
+    "Web Components",
     "Native",
     "ES6",
     "UI",
@@ -36,6 +35,11 @@
     "gulp": "^3.9.1",
     "gulp-babel": "^7.0.0",
     "gulp-clean-dest": "^0.2.0",
-    "gulp-foreach": "^0.1.0"
+    "gulp-foreach": "^0.1.0",
+    "web-component-tester": "^6.2.0"
+  },
+  "dependencies": {
+    "@webcomponents/custom-elements": "github:webcomponents/custom-elements",
+    "@webcomponents/shadydom": "github:webcomponents/shadydom"
   }
 }

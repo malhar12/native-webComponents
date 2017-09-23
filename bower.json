@@ -1,0 +1,34 @@
+{
+  "name": "native-es6-webkit",
+  "description": "A UI Library of Native ES6 Web Components",
+  "main": "index.js",
+  "authors": [
+    "Malhar Deshpande"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "Web",
+    "Components",
+    "Native",
+    "ES6",
+    "UI",
+    "Library"
+  ],
+  "homepage": "https://github.com/malhar12/native-webComponents",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "web-component-tester": "^6.2.0"
+  },
+  "dependencies": {
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^1.0.13",
+    "shadydom": "webcomponents/shadydom#^1.0.4",
+    "custom-elements": "webcomponents/custom-elements#^1.0.4"
+  }
+}

@@ -1,0 +1,24 @@
+language: node_js
+node_js: stable
+dist: trusty
+sudo: required
+addons:
+  firefox: latest
+  apt:
+    sources:
+    - google-chrome
+    packages:
+    - google-chrome-stable
+before_script:
+- npm install -g bower gulp-cli web-component-tester
+- npm install
+- bower install
+script: gulp wct:test
+deploy:
+  provider: npm
+  email: malhar.deshpande18@gmail.com
+  skip_cleanup: true
+  api_key:
+    secure: QxJhgxM9HFrgxk6MBuTKP3+4VLOASCIL500YhGojjxRC4EKqQcJ9dpZlqry/hZgVmYLwJDinoWlIlCBDsKZhgAfSESL4WZowXYsLlzE3eQyaYzZIuLqXQvU22V82FEzMFrFJhPOpnUhGw7MSjV+5MJh/ZUFALIam2o3iWf+OdsAgdgCgr9HdfoIQ5a6ynbjrkkItHIaa5FgtzX1lvFsyYDn2W/NBrebh32wTF3Qh2nB7wX6s6cYF5jsaJBwYVXo8ByIJOny4MtknrLe7F9yyE929B97aiBCbICt8DgLmdiZmILZb8eJafcy/Ze1OSeKJ/beA/89yLbMKdfwfbGgCH0zjjLT+Uzr0NrBz+0kYYCtplXBScKxJFzj9uR4KFVMB2cgA4PP71/QXW6bQcn9FNqWcL+ZH1jV1Bb2wa/8EYyezWP5IPVDvi+m7jUxq1pAlYO8ok950yL/avyIvT+mM0v11neY5shN8xuFHVpBirs0j4VDmeIxg9pv22niA07yKqfA/r8696mCos1C4BxeMEJoMvx8rxHG5idIYBAdf+NiBqS/e+Rc5wQuocXrxc8dgSNoYw2JpSFpK73O+7OA9xkhkodcMn+uEguVJRThF42v1LyR/PGbdw4b8zHkzhLgg3ey9ROnU8LDjjmtcvQaxpJbvHNwJs6pRIjwJyKBhx7k=
+true:
+  branch: master
