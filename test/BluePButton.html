@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Button Test</title>
+    <script src="../bower_components/shadydom/shadydom.min.js"></script>
+    <script src="../bower_components/custom-elements/custom-elements.min.js"></script>
+    <script src="../bower_components/web-component-tester/browser.js"></script>
+    <script src="../bower_components/webcomponentsjs/custom-elements-es5-adapter.js"></script>
+
+    <!-- Now Import the Custom Element here -->
+    <script src="../dist/Blue-Components/Blue-Primary-Button/blue-primary-button.component.js"></script>
+  </head>
+  <body>
+    <b-primary-button id="someButton" label="TEST BUTTON"></b-primary-button>
+    <script>
+      suite('<b-primary-button>', function(){
+        var comp = document.getElementById('someButton');
+        test('renders button', () =>{
+          assert.isOk(comp.shadowRoot.querySelector('button'));
+        });
+      });
+    </script>
+  </body>
+</html>
