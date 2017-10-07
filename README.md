@@ -6,13 +6,14 @@ First you need to install npm module
 
     npm install native-es6-webkit
 
+## List of Components Available
+1. Button
+
 ## Usage
 Import the web component in your application
 
     Import 'native-es6-webkit/Blue-Components/Blue-Primary-Button/blue-primary-button.component';
-    
-    or 
-    
+    or
     <script src='./node_modules/native-es6-webkit/Blue-Components/Blue-Primary-Button/blue-primary-button.component.js'></script>
 
 Since, the web components technology, is relatively new, support for web components is not present on all browsers. Currently, only Google Chrome and Safari gives 100% support. Mozilla Firefox, is currently working on giving support for Shadow DOM v1.
