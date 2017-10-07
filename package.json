@@ -1,6 +1,6 @@
 {
   "name": "native-es6-webkit",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "A UI Library of Native ES6 Web Components",
   "main": "index.js",
   "scripts": {
