@@ -14,10 +14,22 @@
   <body>
     <b-primary-button id="someButton" label="TEST BUTTON"></b-primary-button>
     <script>
+
+
       suite('<b-primary-button>', function(){
         var comp = document.getElementById('someButton');
+
         test('renders button', () =>{
           assert.isOk(comp.shadowRoot.querySelector('button'));
+        });
+
+        test('<b-primary-button> click event', function(){
+          let spy = sinon.spy(comp, 'click');
+
+          comp.click(function(event){
+            event.preventDefault();
+          });
+          expect(spy).to.have.been.called;
         });
       });
     </script>
