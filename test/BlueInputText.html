@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Input Text Test</title>
+    <script src="../bower_components/shadydom/shadydom.min.js"></script>
+    <script src="../bower_components/custom-elements/custom-elements.min.js"></script>
+    <script src="../bower_components/web-component-tester/browser.js"></script>
+    <script src="../bower_components/webcomponentsjs/custom-elements-es5-adapter.js"></script>
+
+    <!-- Now Import the Custom Element here -->
+    <script src="../dist/Blue-Components/Blue-Input-Text/blue-inputtext.component.js"></script>
+  </head>
+  <body>
+    <b-inputtext id="someInput" maxlength="4" />
+    <script>
+      suite('<b-input-text>', function(){
+
+        test('renders inputtext', function(){
+          let comp = document.getElementById('someInput');
+          assert.isOk(comp.shadowRoot.querySelector('input'));
+        });
+
+        test('is disabled', function(){
+          let comp = document.getElementById('someInput'),
+              elem = comp.shadowRoot.querySelector('input');
+          elem.disabled = true;
+          expect(elem.hasAttribute('disabled')).to.be.true;
+        });
+
+        test('has max length', function(){
+          let comp = document.getElementById('someInput'),
+              elem = comp.shadowRoot.querySelector('input');
+          expect(+elem.getAttribute('maxlength')).is.not.NaN;
+        });
+
+
+      });
+    </script>
+  </body>
+</html>
