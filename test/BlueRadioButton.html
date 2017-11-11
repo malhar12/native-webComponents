@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="../bower_components/shadydom/shadydom.min.js"></script>
+    <script src="../bower_components/custom-elements/custom-elements.min.js"></script>
+    <script src="../bower_components/web-component-tester/browser.js"></script>
+    <script src="../bower_components/webcomponentsjs/custom-elements-es5-adapter.js"></script>
+
+    <!-- Now Import the Custom Element here -->
+    <script src="../dist/Blue-Components/Blue-Radio-Button/blue-radio-button.component.js"></script>
+  </head>
+  <body>
+    <form>
+        <b-radio-button id="radio1" name="group1" value="Option 1" checked="true"></b-radio-button>
+    </form>
+    <script>
+      suite('<b-radio-button>', function(){
+
+          test('renders radio button', function(){
+            let comp = document.getElementById('radio1');
+            let element = comp.shadowRoot.querySelector('input[type="radio"]');
+            assert.isOk(element);
+          });
+
+          test('is Disabled', function(){
+            let comp = document.getElementById('radio1');
+            let element = comp.shadowRoot.querySelector('input[type="radio"]');
+            element.disabled = true;
+            expect(element.hasAttribute('disabled')).to.be.true;
+          });
+
+          test('is Checked', function(){
+            let comp = document.getElementById('radio1');
+            let element = comp.shadowRoot.querySelector('input[type="radio"]');
+            expect(Boolean(element.getAttribute('checked'))).to.be.true;
+          });
+
+          test('<b-radio-button> click event', function(){
+            let comp = document.getElementById('radio1');
+            let element = comp.shadowRoot.querySelector('input[type="radio"]');
+            let spy = sinon.spy(comp, 'click');
+
+            comp.click(function(event){
+              console.log(event, 'EVENT');
+              event.preventDefault();
+            });
+
+            expect(spy).to.have.been.called;
+          });
+
+          // test('<b-radio-button> change event', function(){
+          //   let comp = document.getElementById('radio1');
+          //   let element = comp.shadowRoot.querySelector('input[type="radio"]');
+          //   let spy = sinon.spy(comp, 'onchange');
+          //
+          //   comp.onchange = function(event){
+          //     console.log(event.target.value, 'EVENT');
+          //     // event.preventDefault();
+          //   };
+          //
+          //   expect(spy).to.have.been.called;
+          // });
+      });
+    </script>
+  </body>
+</html>

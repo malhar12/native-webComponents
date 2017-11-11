@@ -9,7 +9,7 @@ First you need to install npm module
 ## List of Components Available
 1. Button
 2. Input TextBox
-
+3. Radio Button
 ## Usage
 Import the web component in your application
 
