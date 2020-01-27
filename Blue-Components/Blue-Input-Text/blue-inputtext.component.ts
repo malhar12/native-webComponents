@@ -7,7 +7,7 @@ class BlueInputText extends HTMLElement{
   }
 
   get disabled(){
-    return this.hasAttribute('disabled')
+    return this.hasAttribute('disabled');
   }
 
   set disabled(value){
